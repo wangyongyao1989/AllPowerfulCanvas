@@ -262,7 +262,12 @@ public class AllPowerfulView extends BaseCanvsView {
     }
 
 
-
+    /**
+     * 传入坐标判断坐标是落在mDrawableMap哪个控件之上，如是-1则不在mDrawableMap中控件之内
+     * @param x
+     * @param y
+     * @return
+     */
     private int getDown2Widget(float x,float y ) {
         int xcoords=0;
         int ycoords=0;
