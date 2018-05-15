@@ -14,7 +14,7 @@ import java.util.Set;
  * @date 2018/5/15
  */
 
-public class AllPowerfulView extends BaseCanvsView {
+public class AllPowerfulCanvasView extends BaseCanvsView {
 
     private static final int RADIUS = 100;                  //半径的值
     private boolean isAcceptClickEvent=true;                //是否接受点击事件
@@ -35,7 +35,7 @@ public class AllPowerfulView extends BaseCanvsView {
 
     private int mUp2Widget=-1;
 
-    public AllPowerfulView(Context context, @Nullable AttributeSet attrs) {
+    public AllPowerfulCanvasView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 

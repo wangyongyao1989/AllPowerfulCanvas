@@ -18,12 +18,45 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
             
-            <com.wangyongyao.allpowerfulcanvas.views.AllPowerfulView
+            <com.wangyongyao.allpowerfulcanvas.views.AllPowerfulCanvasView
                 android:id="@+id/all_powerful_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </FrameLayout>
 
     </com.wangyongyao.allpowerfulcanvas.views.TwoFingerSlidingSrcollView>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_motor_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/motor_frame_add_background_selector"
+            android:src="@drawable/action_left_add" />
+
+        <ImageView
+            android:id="@+id/iv_motor_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_motor_add"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/motor_frame_preview_background_selector"
+            android:src="@drawable/action_left_view" />
+
+
+        <ImageView
+            android:id="@+id/iv_motor_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/motor_frame_add_background_selector"
+            android:src="@drawable/action_left_apply"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>

@@ -3,8 +3,11 @@ package com.wangyongyao.allpowerfulcanvas;
 import android.os.Bundle;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.view.ViewGroup;
 
-import com.wangyongyao.allpowerfulcanvas.views.AllPowerfulView;
+import com.wangyongyao.allpowerfulcanvas.manager.CanvasEventOperationManager;
+import com.wangyongyao.allpowerfulcanvas.views.AllPowerfulCanvasView;
 import com.wangyongyao.allpowerfulcanvas.views.TwoFingerSlidingSrcollView;
 
 import butterknife.BindView;
@@ -13,7 +16,7 @@ import butterknife.ButterKnife;
 public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.all_powerful_view)
-    AllPowerfulView mAllPowerfulView;
+    AllPowerfulCanvasView mAllPowerfulCanvasView;
 
     @BindView(R.id.two_finger_sliding_scrollview)
     TwoFingerSlidingSrcollView mTwoFingerSlidingScrollview;
@@ -33,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initEvent() {
-
+        CanvasEventOperationManager manager = new CanvasEventOperationManager(mAllPowerfulCanvasView,this);
     }
 
     private void initData() {
@@ -41,5 +44,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+        ViewGroup.LayoutParams layoutParams = mAllPowerfulCanvasView.getLayoutParams();
+        layoutParams.width = (1192*3);
+        mAllPowerfulCanvasView.setLayoutParams(layoutParams);
     }
 }
