@@ -6,13 +6,24 @@
     android:layout_height="match_parent"
     tools:context="com.wangyongyao.allpowerfulcanvas.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.wangyongyao.allpowerfulcanvas.views.TwoFingerSlidingSrcollView
+        android:id="@+id/two_finger_sliding_scrollview"
+        android:background="@drawable/bg2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_gravity="right"
+            android:layout_margin="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+            <com.wangyongyao.allpowerfulcanvas.views.AllPowerfulView
+                android:id="@+id/all_powerful_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+    </com.wangyongyao.allpowerfulcanvas.views.TwoFingerSlidingSrcollView>
 
 </android.support.constraint.ConstraintLayout>
