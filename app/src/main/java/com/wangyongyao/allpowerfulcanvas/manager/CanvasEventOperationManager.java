@@ -65,12 +65,87 @@ public class CanvasEventOperationManager {
             }
         });
 
+        /**
+         * CircleWidget中长按事件
+         */
+        mAllPowerfulCanvasView.setOnWidgetLongPressListener(new AllPowerfulCanvasView.onWidgetLongPressListener() {
+            @Override
+            public void onWidgetLongPress(int index, int x, int y) {
+
+            }
+        });
+
+
+        /**
+         * CircleWidget中移动事件
+         */
         mAllPowerfulCanvasView.setOnWidgetMoveListener(new AllPowerfulCanvasView.onWidgetMoveListener() {
             @Override
             public void onWidgetMove(int index, int x, int y) {
 
             }
         });
+
+        /**
+         * 手势按下时在CircleWidget之外的事件
+         */
+        mAllPowerfulCanvasView.setOnOutOfWidgetDownListener(new AllPowerfulCanvasView.onOutOfWidgetDownListener() {
+            @Override
+            public void onOutOfWidgetDown(int x, int y) {
+
+            }
+        });
+
+        /**
+         * 画布中CircleWidget之外的手势滑动事件
+         */
+        mAllPowerfulCanvasView.setOnOutOfWidgetMoveListener(new AllPowerfulCanvasView.onOutOfWidgetMoveListener() {
+            @Override
+            public void onOutOfWidgetMove(int x, int y) {
+
+            }
+        });
+
+        /**
+         * 手势抬起在CircleWidget之外的事件
+         */
+        mAllPowerfulCanvasView.setOnOutOfWidgetUpListener(new AllPowerfulCanvasView.onOutOfWidgetUpListener() {
+            @Override
+            public void onOutOfWidgetUp(int x, int y) {
+
+            }
+        });
+
+        /**
+         * 手势按下时在CircleWidget范围内的事件
+         */
+        mAllPowerfulCanvasView.setOnWidgetDownListener(new AllPowerfulCanvasView.onWidgetDownListener() {
+            @Override
+            public void onWidgetDown(int index, int x, int y) {
+
+            }
+        });
+
+        /**
+         * 手势抬起时在CircleWidget之内的事件
+         */
+        mAllPowerfulCanvasView.setOnWidgetUpListener(new AllPowerfulCanvasView.onWidgetUpListener() {
+            @Override
+            public void onWidgetUp(int index, int x, int y) {
+
+            }
+        });
+
+        /**
+         * 点击在CircleWidget之外的事件
+         */
+        mAllPowerfulCanvasView.setOnOutOfWidgetClickListener(new AllPowerfulCanvasView.onOutOfWidgetClickListener() {
+            @Override
+            public void onWidgetClick() {
+
+            }
+        });
+
 
     }
 
