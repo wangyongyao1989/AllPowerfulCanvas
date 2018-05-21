@@ -33,6 +33,17 @@ public class CanvasEventOperationManager {
     public CanvasEventOperationManager(AllPowerfulCanvasView allPowerfulCanvasView, Context context) {
        this.mAllPowerfulCanvasView = allPowerfulCanvasView;
        this.mContext = context;
+       initEvent();
+    }
+
+    private void initEvent() {
+        mAllPowerfulCanvasView.setOnWidgetMoveListener(new AllPowerfulCanvasView.onWidgetMoveListener() {
+            @Override
+            public void onWidgetMove(int index, int x, int y) {
+
+            }
+        });
+
     }
 
     public void addCirclesWidget() {
@@ -47,7 +58,7 @@ public class CanvasEventOperationManager {
         Resources resources = mContext.getResources();
         Bitmap bitmap = BitmapFactory.decodeResource(resources, R.drawable.action_zhen_03);
         mCirclesWidget = new CirclesWidget(bitmap,x,y);
-        mCirclesWidget.setKey(++mKey);
+        mCirclesWidget.setKey(mKey++);
         mAllPowerfulCanvasView.addCanvasDrawableMap(mCirclesWidget.getKey(),mCirclesWidget);
     }
 

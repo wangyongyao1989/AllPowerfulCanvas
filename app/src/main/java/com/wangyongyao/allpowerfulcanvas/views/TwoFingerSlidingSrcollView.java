@@ -51,10 +51,10 @@ public class TwoFingerSlidingSrcollView extends HorizontalScrollView {
             case MotionEvent.ACTION_MOVE: {
 //                Log.i("everb", "canvas scrollview onTouchEvent：" + event.getX() + " " + event.getY() + " event.getAction(): " + event.getAction()+ " isDoubleDrag:"+isDoubleDrag);
                 mMoveDragCanvsX = event.getX();
-                Log.i("everb", "move的值：" + mMoveDragCanvsX);
+//                Log.i("everb", "move的值：" + mMoveDragCanvsX);
 //                    Log.i("everb","移动的值："+mMoveDragCanvsX);
                 float canvsMoveX = mMoveDragCanvsX - mStartDownX;
-                Log.i("everb", "移动的值：" + canvsMoveX);
+//                Log.i("everb", "移动的值：" + canvsMoveX);
                 this.scrollBy(-(int) canvsMoveX, 0);
             }
             break;

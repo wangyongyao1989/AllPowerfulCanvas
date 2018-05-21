@@ -31,6 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.iv_motor_apply)
     ImageView mIvMotorApply;
+
     private CanvasEventOperationManager mOperationManager;
 
     @Override

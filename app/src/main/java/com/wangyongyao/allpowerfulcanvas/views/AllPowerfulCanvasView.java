@@ -3,6 +3,7 @@ package com.wangyongyao.allpowerfulcanvas.views;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 
 import java.util.Set;
@@ -63,6 +64,7 @@ public class AllPowerfulCanvasView extends BaseCanvsView {
                 mDownTime = System.currentTimeMillis();
                 DragDownX = event.getX();//float DragDownX
                 DragDownY = event.getY();//float DragDownY
+                Log.i("everb", "按下的值：" + DragDownX+"======"+DragDownY);
 
                 if (mOnOutOfWidgetDownListener!=null){
                     mOnOutOfWidgetDownListener.onOutOfWidgetDown((int) DragDownX,(int) DragDownY);
@@ -84,6 +86,7 @@ public class AllPowerfulCanvasView extends BaseCanvsView {
             case MotionEvent.ACTION_MOVE: {
                 float ex = event.getX();
                 float ey = event.getY();
+                Log.i("everb", "移动的值：" + ex+"======"+ey);
                 moveX += Math.abs(ex - DragDownX);//X轴距离
                 moveY += Math.abs(ey - DragDownY);//y轴距离
                 moveX1 = ex;
@@ -103,15 +106,14 @@ public class AllPowerfulCanvasView extends BaseCanvsView {
                         if (mOnWidgetMoveListener!=null){
                             mOnWidgetMoveListener.onWidgetMove(mDown2Widget,(int)moveX1,(int)moveY1);
                             if (isDragWidgetMode){
-                                // TODO: 2018/5/15 设置控件坐标位置（减去控件本身的半径大小）
-    /*                            if (mDrawableMap.get(mDown2Widget) instanceof KeyFrameWidget){
+                                if (mDrawableMap.get(mDown2Widget) instanceof CirclesWidget){
 //                                    Log.i("everb", "移动的值：" + mDown2Widget);
                                     mDrawableMap.get(mDown2Widget).setXcoords((int) moveX1-
-                                            ((KeyFrameWidget)mDrawableMap.get(mDown2Widget)).getWidth()/2);
+                                            ((CirclesWidget)mDrawableMap.get(mDown2Widget)).getWidth()/2);
 
                                     mDrawableMap.get(mDown2Widget).setYcoords((int) moveY1-
-                                            ((KeyFrameWidget)mDrawableMap.get(mDown2Widget)).getHeight()/2);
-                                }*/
+                                            ((CirclesWidget)mDrawableMap.get(mDown2Widget)).getHeight()/2);
+                                }
                                 mOnWidgetMoveListener.onWidgetMove(mDown2Widget,(int)moveX1,(int)moveY1);
                                 //Log.e(TAG,"............move.........");
                                 invalidate();
