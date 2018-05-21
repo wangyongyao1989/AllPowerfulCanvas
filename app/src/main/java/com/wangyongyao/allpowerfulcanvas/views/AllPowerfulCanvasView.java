@@ -64,7 +64,6 @@ public class AllPowerfulCanvasView extends BaseCanvsView {
                 mDownTime = System.currentTimeMillis();
                 DragDownX = event.getX();//float DragDownX
                 DragDownY = event.getY();//float DragDownY
-                Log.i("everb", "按下的值：" + DragDownX+"======"+DragDownY);
 
                 if (mOnOutOfWidgetDownListener!=null){
                     mOnOutOfWidgetDownListener.onOutOfWidgetDown((int) DragDownX,(int) DragDownY);
@@ -86,7 +85,6 @@ public class AllPowerfulCanvasView extends BaseCanvsView {
             case MotionEvent.ACTION_MOVE: {
                 float ex = event.getX();
                 float ey = event.getY();
-                Log.i("everb", "移动的值：" + ex+"======"+ey);
                 moveX += Math.abs(ex - DragDownX);//X轴距离
                 moveY += Math.abs(ey - DragDownY);//y轴距离
                 moveX1 = ex;
