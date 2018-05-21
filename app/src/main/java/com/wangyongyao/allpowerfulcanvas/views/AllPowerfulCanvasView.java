@@ -3,6 +3,7 @@ package com.wangyongyao.allpowerfulcanvas.views;
 import android.content.Context;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.MotionEvent;
 
 import java.util.Set;
@@ -14,7 +15,7 @@ import java.util.Set;
  * @date 2018/5/15
  */
 
-public class AllPowerfulView extends BaseCanvsView {
+public class AllPowerfulCanvasView extends BaseCanvsView {
 
     private static final int RADIUS = 100;                  //半径的值
     private boolean isAcceptClickEvent=true;                //是否接受点击事件
@@ -35,7 +36,7 @@ public class AllPowerfulView extends BaseCanvsView {
 
     private int mUp2Widget=-1;
 
-    public AllPowerfulView(Context context, @Nullable AttributeSet attrs) {
+    public AllPowerfulCanvasView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
@@ -103,15 +104,14 @@ public class AllPowerfulView extends BaseCanvsView {
                         if (mOnWidgetMoveListener!=null){
                             mOnWidgetMoveListener.onWidgetMove(mDown2Widget,(int)moveX1,(int)moveY1);
                             if (isDragWidgetMode){
-                                // TODO: 2018/5/15 设置控件坐标位置（减去控件本身的半径大小）
-    /*                            if (mDrawableMap.get(mDown2Widget) instanceof KeyFrameWidget){
+                                if (mDrawableMap.get(mDown2Widget) instanceof CirclesWidget){
 //                                    Log.i("everb", "移动的值：" + mDown2Widget);
                                     mDrawableMap.get(mDown2Widget).setXcoords((int) moveX1-
-                                            ((KeyFrameWidget)mDrawableMap.get(mDown2Widget)).getWidth()/2);
+                                            ((CirclesWidget)mDrawableMap.get(mDown2Widget)).getWidth()/2);
 
                                     mDrawableMap.get(mDown2Widget).setYcoords((int) moveY1-
-                                            ((KeyFrameWidget)mDrawableMap.get(mDown2Widget)).getHeight()/2);
-                                }*/
+                                            ((CirclesWidget)mDrawableMap.get(mDown2Widget)).getHeight()/2);
+                                }
                                 mOnWidgetMoveListener.onWidgetMove(mDown2Widget,(int)moveX1,(int)moveY1);
                                 //Log.e(TAG,"............move.........");
                                 invalidate();
@@ -262,7 +262,12 @@ public class AllPowerfulView extends BaseCanvsView {
     }
 
 
-
+    /**
+     * 传入坐标判断坐标是落在mDrawableMap哪个控件之上，如是-1则不在mDrawableMap中控件之内
+     * @param x
+     * @param y
+     * @return
+     */
     private int getDown2Widget(float x,float y ) {
         int xcoords=0;
         int ycoords=0;

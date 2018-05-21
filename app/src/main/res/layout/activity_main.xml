@@ -1,18 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.wangyongyao.allpowerfulcanvas.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.wangyongyao.allpowerfulcanvas.views.TwoFingerSlidingSrcollView
+        android:id="@+id/two_finger_sliding_scrollview"
+        android:background="@drawable/bg2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+        <FrameLayout
+            android:layout_gravity="right"
+            android:layout_margin="3dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            
+            <com.wangyongyao.allpowerfulcanvas.views.AllPowerfulCanvasView
+                android:id="@+id/all_powerful_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </FrameLayout>
+
+    </com.wangyongyao.allpowerfulcanvas.views.TwoFingerSlidingSrcollView>
+
+    <RelativeLayout
+        android:padding="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/iv_motor_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/add_background_selector"
+            android:src="@drawable/action_left_add" />
+
+        <ImageView
+            android:id="@+id/iv_motor_preview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/iv_motor_add"
+            android:layout_marginTop="5dp"
+            android:background="@drawable/preview_background_selector"
+            android:src="@drawable/action_left_view" />
+
+
+        <ImageView
+            android:id="@+id/iv_motor_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/add_background_selector"
+            android:src="@drawable/action_left_apply"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+
+
+</FrameLayout>
