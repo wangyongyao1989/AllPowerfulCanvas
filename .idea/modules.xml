@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AllPowerfulCanvas.iml" filepath="$PROJECT_DIR$/AllPowerfulCanvas.iml" />
+      <module fileurl="file://C:\Users\Administrator\Desktop\CodeDemo\AllPowerfulCanvas\AllPowerfulCanvas.iml" filepath="C:\Users\Administrator\Desktop\CodeDemo\AllPowerfulCanvas\AllPowerfulCanvas.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Administrator\Desktop\CodeDemo\AllPowerfulCanvas\app\app.iml" filepath="C:\Users\Administrator\Desktop\CodeDemo\AllPowerfulCanvas\app\app.iml" />
     </modules>
   </component>
 </project>
