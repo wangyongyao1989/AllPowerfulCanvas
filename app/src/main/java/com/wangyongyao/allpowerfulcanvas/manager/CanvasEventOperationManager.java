@@ -28,7 +28,7 @@ public class CanvasEventOperationManager {
 
     private AllPowerfulCanvasView mAllPowerfulCanvasView;
     private Context mContext;
-    private int mPreX = 0;
+    private int mPreX = 100;
     private CirclesWidget mCirclesWidget;
     private int mKey = 0;
     private int mIndex = -1;        // 记录点击的动作帧在集合中位置
@@ -164,7 +164,7 @@ public class CanvasEventOperationManager {
         Resources resources = mContext.getResources();
         Bitmap bitmap = BitmapFactory.decodeResource(resources, R.drawable.action_zhen_03);
         mCirclesWidget = new CirclesWidget(bitmap,x,y);
-        mCirclesWidget.setKey(mKey++);
+        mCirclesWidget.setKey(++mKey);
         mAllPowerfulCanvasView.addCanvasDrawableMap(mCirclesWidget.getKey(),mCirclesWidget);
     }
 
