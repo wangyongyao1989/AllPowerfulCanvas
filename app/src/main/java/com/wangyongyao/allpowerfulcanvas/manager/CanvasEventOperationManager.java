@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -40,7 +41,13 @@ public class CanvasEventOperationManager {
     public CanvasEventOperationManager(AllPowerfulCanvasView allPowerfulCanvasView, Context context) {
        this.mAllPowerfulCanvasView = allPowerfulCanvasView;
        this.mContext = context;
+       initView();
        initEvent();
+    }
+
+    private void initView() {
+        mAllPowerfulCanvasView.setBackgroundMode(AllPowerfulCanvasView.BACKGROUND_STYLE_BLANK);
+        mAllPowerfulCanvasView.setBackgroundColor(Color.TRANSPARENT);
     }
 
     private void initEvent() {
