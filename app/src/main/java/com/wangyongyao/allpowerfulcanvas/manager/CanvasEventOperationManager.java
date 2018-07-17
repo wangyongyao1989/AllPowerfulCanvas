@@ -5,7 +5,9 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.wangyongyao.allpowerfulcanvas.R;
@@ -34,8 +36,7 @@ public class CanvasEventOperationManager {
     private int mKey = 0;
     private int mIndex = -1;        // 记录点击的动作帧在集合中位置
     private long mLastTime = 0, mCurrentTime = 0;  // 动作帧被点击的上一次时间戳    动作帧被点击的当前时间戳
-
-
+    private int mScreenHeight;      //屏幕的高度
 
 
     public CanvasEventOperationManager(AllPowerfulCanvasView allPowerfulCanvasView, Context context) {
@@ -46,6 +47,11 @@ public class CanvasEventOperationManager {
     }
 
     private void initView() {
+        //获取屏幕宽高
+        WindowManager wm = (WindowManager) mContext.getSystemService(Context.WINDOW_SERVICE);
+        DisplayMetrics outMetrics = new DisplayMetrics();
+        wm.getDefaultDisplay().getMetrics(outMetrics);
+        mScreenHeight = outMetrics.heightPixels;
         mAllPowerfulCanvasView.setBackgroundMode(AllPowerfulCanvasView.BACKGROUND_STYLE_BLANK);
         mAllPowerfulCanvasView.setBackgroundColor(Color.TRANSPARENT);
     }
@@ -166,8 +172,8 @@ public class CanvasEventOperationManager {
             if (mPreX < ((CDrawable) en.getValue()).getXcoords()) {
                 mPreX = ((CDrawable) en.getValue()).getXcoords();
             }
-        int x = MathUtils.getRandomNum(mPreX + MathUtils.dpToPx(mContext,50), mPreX + MathUtils.dpToPx(mContext,50));
-        int y = MathUtils.getRandomNum(MathUtils.dpToPx(mContext,50), 1920 - MathUtils.dpToPx(mContext,150));
+        int x = MathUtils.getRandomNum(mPreX + MathUtils.dpToPx(mContext,150), mPreX + MathUtils.dpToPx(mContext,150));
+        int y = MathUtils.getRandomNum(MathUtils.dpToPx(mContext,50), mScreenHeight - MathUtils.dpToPx(mContext,150));
         Resources resources = mContext.getResources();
         Bitmap bitmap = BitmapFactory.decodeResource(resources, R.drawable.action_zhen_03);
         mCirclesWidget = new CirclesWidget(bitmap,x,y);
